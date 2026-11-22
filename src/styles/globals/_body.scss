@@ -1,0 +1,154 @@
+
+@include reset('full');
+@include boxModel('border');
+
+html {
+	background: url("/img/background.jpg");
+}
+
+body {
+	background: color(primary, darkest);
+	background: linear-gradient(
+		to right,
+		rgba(darken(color(primary, darkest), 10), 0.9),
+		rgba(color(primary, darkest), 0.5), 
+		rgba(darken(color(primary, darkest), 10), 0.9)
+	);
+}
+
+body.tingle-enabled {
+	background: color(primary, darkest) !important;
+}
+
+body, 
+input, 
+select, 
+textarea {
+	color: color(gray, off-white);
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	letter-spacing: 0.025em;
+	line-height: 20px;
+
+	@include breakpoint($screen-sm) {
+		font-size: 16px;
+		line-height: 24px;
+	}
+}
+
+a {
+	border-bottom: 1px solid color(gray, off-white);
+	color: color(gray, off-white);
+	text-decoration: none;
+	transition: all 0.1s ease-in-out;
+
+	&:hover {
+		border-color: darken(color(gray, off-white), 20);
+		color: darken(color(gray, off-white), 20);
+	}
+}
+
+strong, 
+b { font-weight: 600; }
+
+p, 
+ul, 
+ol, 
+dl, 
+table, 
+blockquote,
+small {
+	display: block;
+	margin: 0 0 22px; 
+}
+
+small {
+	font-size: 14px;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+	color: inherit;
+	font-weight: 300;
+	line-height: 1.75em;
+	margin-bottom: 22px;
+
+	a {
+		color: inherit;
+		text-decoration: none;
+		border: 0;
+	}
+}
+
+h1 {
+	font-size: 33px;
+	letter-spacing: 0.1em;
+	line-height: 33px;
+	margin-bottom: 44px;
+
+	@include breakpoint($screen-xs) {
+		font-size: 44px;
+		line-height: 44px;
+	}
+}
+
+h2 {
+	font-size: 22px;
+	letter-spacing: 0.1em;
+	line-height: 22px;
+	margin-bottom: 44px;
+
+	@include breakpoint($screen-xs) {
+		font-size: 33px;
+		line-height: 33px;
+	}
+}
+
+h3 {
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 0.025em;
+	line-height: 16px;
+	margin-bottom: 11px;
+
+	@include breakpoint($screen-xs) {
+		font-size: 22px;
+		line-height: 22px;
+	}
+}
+
+sub {
+	font-size: 12px;
+	position: relative;
+	top: 8px;
+}
+
+sup {
+	font-size: 12px;
+	position: relative;
+	top: -8px;
+}
+
+hr {
+	border-top: 1px solid color(gray, dark);
+	margin-bottom: 22px;
+}
+
+blockquote {
+	border-left: solid 0.5em transparentize(color(gray, dark), 0.8);
+	font-style: italic;
+	padding: 1em 0 1em 2em;
+}
+
+p {	
+	text-align: justify;
+
+	@include breakpoint($screen-xs) {
+		text-align: left;
+	}
+}

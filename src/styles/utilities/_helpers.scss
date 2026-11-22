@@ -1,0 +1,46 @@
+
+// Gemerate helper classes for padding and margin modifiers
+@include generate_space_helpers();
+
+/// Generates helper classes for each color
+@each $category, $color in $color-map {
+  @each $label, $value in $color {
+    .color__#{$label}--text { color: $value !important; }
+    .color__#{$label}--border { border-color: $value !important; }
+    .color__#{$label}--bg { background-color: $value !important; }
+  }
+}
+
+.mobile-only {
+	@include breakpoint($screen-sm) { display: none; }
+}
+
+.hide-on-mobile {
+	display: none;
+
+	@include breakpoint($screen-sm) { display: block; }
+}
+
+.hide {
+	display: none !important;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.opacity-50 {
+	opacity: 0.5;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-upper {
+	text-transform: uppercase;
+}
